@@ -1,0 +1,20 @@
+.home{
+    margin-top: 200px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.home h1 {
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+.home p{
+    font-size: 30px;
+}
+
+.home .link{
+    color: #CC0000;
+    text-decoration: none;
+    font-weight: bold;
+}

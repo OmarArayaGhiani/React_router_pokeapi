@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { useEffect, useState } from "react"
+
+import Context from "./context"
+import Navbar from "./components/navbar"
+
+import Home from "./views/home"
+import Pokemons from "./views/pokemons"
+import PokemonDetail from "./views/pokemon_detail"
 
 function App() {
+  const [pokemons, setPokemons] = useState([])
+  const sharedStates = {pokemons}
+
+  useEffect(() =>{
+    getPokemonsData()
+  }, []) 
+  
+  const getPokemonsData = async() =>{
+    const resPokemonsData = await fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151")
+    const pokemonsData = await resPokemonsData.json()
+    setPokemons(pokemonsData.results)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Context.Provider value={sharedStates}>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pokemons/" element={<Pokemons />} />
+            <Route path="/pokemons/:pokeName" element={<PokemonDetail />} />
+          </Routes>
+        </BrowserRouter>
+      </Context.Provider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

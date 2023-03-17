@@ -1,0 +1,52 @@
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.flex h2{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.hp{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.subData{
+    margin: 30px 0px;
+    text-align: center;
+}
+
+.subData p{
+    margin: 10px 0px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.flex hr{
+    width: 50%;
+    margin: 10px auto;
+    height: 7px;
+    background-color: #cc4c4c;
+    border: #CC0000;
+    border-radius: 5px;
+}
+
+.flex p{
+    font-weight: bold;
+}

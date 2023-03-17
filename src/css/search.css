@@ -1,0 +1,48 @@
+.search {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.search h2{
+    margin: 30px 0px 20px;
+    font-weight: bold;
+    font-size: 35px;
+    color: whitesmoke;
+}
+
+.selectSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.selectSection select{
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #CC0000;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.selectSection select:hover{
+    cursor: pointer;
+}
+
+.selectSection button{
+    width: 180px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #ffde00;
+    border: 2px solid #CC0000;
+    color: #CC0000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.selectSection button:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
